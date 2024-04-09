@@ -1,4 +1,6 @@
-﻿namespace DoAnCuoiKi
+﻿using System.Windows.Forms;
+
+namespace DoAnCuoiKi
 {
     partial class ProjectForm
     {
@@ -63,8 +65,8 @@
             LBTaskInProject = new ListBox();
             txtShowInfoTaskInProject = new TextBox();
             tabTaskInProjectInfo = new TabPage();
-            listBox1 = new ListBox();
-            textBox5 = new TextBox();
+            LBProjectList2 = new ListBox();
+            TBProjectInfor = new TextBox();
             tabPage5 = new TabPage();
             tabControl1.SuspendLayout();
             tabAddProject.SuspendLayout();
@@ -86,6 +88,7 @@
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(800, 438);
             tabControl1.TabIndex = 0;
+            tabControl1.SelectedIndexChanged += TabControl1_SelectedIndexChanged;
             // 
             // tabAddProject
             // 
@@ -436,8 +439,8 @@
             // tabTaskInProjectInfo
             // 
             tabTaskInProjectInfo.BackColor = Color.LightSteelBlue;
-            tabTaskInProjectInfo.Controls.Add(listBox1);
-            tabTaskInProjectInfo.Controls.Add(textBox5);
+            tabTaskInProjectInfo.Controls.Add(LBProjectList2);
+            tabTaskInProjectInfo.Controls.Add(TBProjectInfor);
             tabTaskInProjectInfo.Location = new Point(4, 29);
             tabTaskInProjectInfo.Name = "tabTaskInProjectInfo";
             tabTaskInProjectInfo.Padding = new Padding(3);
@@ -445,26 +448,27 @@
             tabTaskInProjectInfo.TabIndex = 3;
             tabTaskInProjectInfo.Text = "Thông tin dự án";
             // 
-            // listBox1
+            // LBProjectList2
             // 
-            listBox1.Dock = DockStyle.Left;
-            listBox1.FormattingEnabled = true;
-            listBox1.HorizontalScrollbar = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(3, 3);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(220, 399);
-            listBox1.TabIndex = 2;
+            LBProjectList2.Dock = DockStyle.Left;
+            LBProjectList2.FormattingEnabled = true;
+            LBProjectList2.HorizontalScrollbar = true;
+            LBProjectList2.ItemHeight = 20;
+            LBProjectList2.Location = new Point(3, 3);
+            LBProjectList2.Name = "LBProjectList2";
+            LBProjectList2.Size = new Size(220, 399);
+            LBProjectList2.TabIndex = 2;
+            LBProjectList2.SelectedIndexChanged += LBProjectList2_SelectedIndexChanged;
             // 
-            // textBox5
+            // TBProjectInfor
             // 
-            textBox5.Dock = DockStyle.Right;
-            textBox5.Location = new Point(223, 3);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.ScrollBars = ScrollBars.Vertical;
-            textBox5.Size = new Size(566, 399);
-            textBox5.TabIndex = 1;
+            TBProjectInfor.Dock = DockStyle.Right;
+            TBProjectInfor.Location = new Point(223, 3);
+            TBProjectInfor.Multiline = true;
+            TBProjectInfor.Name = "TBProjectInfor";
+            TBProjectInfor.ScrollBars = ScrollBars.Vertical;
+            TBProjectInfor.Size = new Size(566, 399);
+            TBProjectInfor.TabIndex = 1;
             // 
             // tabPage5
             // 
@@ -529,8 +533,8 @@
         private ComboBox ProjectStatusComboBox;
         private Label label9;
         private Button btnSearch;
-        private TextBox textBox5;
-        private ListBox listBox1;
+        private TextBox TBProjectInfor;
+        private ListBox LBProjectList2;
         private Button btnDeleteProject;
         private ListBox LBTaskInProject;
         private TextBox txtShowInfoTaskInProject;

@@ -31,17 +31,13 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             buttonDeleteProjectAdd = new Button();
-            btnSaveProject = new Button();
+            btnSaveTask = new Button();
             groupBox1 = new GroupBox();
-            dateTimePickerEndDate = new DateTimePicker();
-            dateTimePickerStartDate = new DateTimePicker();
-            comboBoxStatus = new ComboBox();
-            txtTarget = new TextBox();
-            txtDescription = new TextBox();
+            dateTimePickerEndDateTask = new DateTimePicker();
+            dateTimePickerStartDateTask = new DateTimePicker();
             label7 = new Label();
-            txtProjectName = new TextBox();
+            txtTaskName = new TextBox();
             label5 = new Label();
-            label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -66,6 +62,8 @@
             listBox1 = new ListBox();
             textBox5 = new TextBox();
             tabPage5 = new TabPage();
+            PBTask = new ProgressBar();
+            CBProjectToAddTask = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -91,7 +89,7 @@
             // 
             tabPage1.BackColor = Color.LightSteelBlue;
             tabPage1.Controls.Add(buttonDeleteProjectAdd);
-            tabPage1.Controls.Add(btnSaveProject);
+            tabPage1.Controls.Add(btnSaveTask);
             tabPage1.Controls.Add(groupBox1);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
@@ -110,27 +108,25 @@
             buttonDeleteProjectAdd.TextImageRelation = TextImageRelation.TextAboveImage;
             buttonDeleteProjectAdd.UseVisualStyleBackColor = true;
             // 
-            // btnSaveProject
+            // btnSaveTask
             // 
-            btnSaveProject.Location = new Point(677, 40);
-            btnSaveProject.Name = "btnSaveProject";
-            btnSaveProject.Size = new Size(94, 29);
-            btnSaveProject.TabIndex = 1;
-            btnSaveProject.Text = "Lưu";
-            btnSaveProject.UseVisualStyleBackColor = true;
+            btnSaveTask.Location = new Point(677, 40);
+            btnSaveTask.Name = "btnSaveTask";
+            btnSaveTask.Size = new Size(94, 29);
+            btnSaveTask.TabIndex = 1;
+            btnSaveTask.Text = "Lưu";
+            btnSaveTask.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.Azure;
-            groupBox1.Controls.Add(dateTimePickerEndDate);
-            groupBox1.Controls.Add(dateTimePickerStartDate);
-            groupBox1.Controls.Add(comboBoxStatus);
-            groupBox1.Controls.Add(txtTarget);
-            groupBox1.Controls.Add(txtDescription);
+            groupBox1.Controls.Add(CBProjectToAddTask);
+            groupBox1.Controls.Add(PBTask);
+            groupBox1.Controls.Add(dateTimePickerEndDateTask);
+            groupBox1.Controls.Add(dateTimePickerStartDateTask);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(txtProjectName);
+            groupBox1.Controls.Add(txtTaskName);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
@@ -142,87 +138,51 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "thêm công việc";
             // 
-            // dateTimePickerEndDate
+            // dateTimePickerEndDateTask
             // 
-            dateTimePickerEndDate.CalendarFont = new Font("Segoe UI", 2F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerEndDate.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerEndDate.Location = new Point(379, 103);
-            dateTimePickerEndDate.Name = "dateTimePickerEndDate";
-            dateTimePickerEndDate.Size = new Size(185, 23);
-            dateTimePickerEndDate.TabIndex = 14;
-            dateTimePickerEndDate.Value = new DateTime(2024, 4, 7, 20, 26, 23, 0);
+            dateTimePickerEndDateTask.CalendarFont = new Font("Segoe UI", 2F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerEndDateTask.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerEndDateTask.Location = new Point(379, 103);
+            dateTimePickerEndDateTask.Name = "dateTimePickerEndDateTask";
+            dateTimePickerEndDateTask.Size = new Size(185, 23);
+            dateTimePickerEndDateTask.TabIndex = 14;
+            dateTimePickerEndDateTask.Value = new DateTime(2024, 4, 7, 20, 26, 23, 0);
             // 
-            // dateTimePickerStartDate
+            // dateTimePickerStartDateTask
             // 
-            dateTimePickerStartDate.CalendarFont = new Font("Segoe UI", 2F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerStartDate.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePickerStartDate.Location = new Point(99, 103);
-            dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            dateTimePickerStartDate.Size = new Size(184, 23);
-            dateTimePickerStartDate.TabIndex = 13;
-            // 
-            // comboBoxStatus
-            // 
-            comboBoxStatus.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBoxStatus.FormattingEnabled = true;
-            comboBoxStatus.Items.AddRange(new object[] { "", "Chưa bắt đầu", "Đang trong tiến độ", "Hoàn thành", "Đã hủy" });
-            comboBoxStatus.Location = new Point(132, 196);
-            comboBoxStatus.Name = "comboBoxStatus";
-            comboBoxStatus.Size = new Size(151, 28);
-            comboBoxStatus.TabIndex = 12;
-            // 
-            // txtTarget
-            // 
-            txtTarget.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTarget.Location = new Point(132, 155);
-            txtTarget.Name = "txtTarget";
-            txtTarget.Size = new Size(432, 27);
-            txtTarget.TabIndex = 9;
-            // 
-            // txtDescription
-            // 
-            txtDescription.Location = new Point(33, 256);
-            txtDescription.Multiline = true;
-            txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(531, 86);
-            txtDescription.TabIndex = 8;
+            dateTimePickerStartDateTask.CalendarFont = new Font("Segoe UI", 2F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerStartDateTask.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePickerStartDateTask.Location = new Point(99, 103);
+            dateTimePickerStartDateTask.Name = "dateTimePickerStartDateTask";
+            dateTimePickerStartDateTask.Size = new Size(184, 23);
+            dateTimePickerStartDateTask.TabIndex = 13;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(33, 233);
+            label7.Location = new Point(33, 226);
             label7.Name = "label7";
-            label7.Size = new Size(48, 20);
+            label7.Size = new Size(116, 20);
             label7.TabIndex = 7;
-            label7.Text = "Mô tả";
+            label7.Text = "Thêm vào dự án";
             // 
-            // txtProjectName
+            // txtTaskName
             // 
-            txtProjectName.Location = new Point(132, 38);
-            txtProjectName.Name = "txtProjectName";
-            txtProjectName.Size = new Size(432, 36);
-            txtProjectName.TabIndex = 5;
+            txtTaskName.Location = new Point(132, 38);
+            txtTaskName.Name = "txtTaskName";
+            txtTaskName.Size = new Size(432, 36);
+            txtTaskName.TabIndex = 5;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(33, 199);
+            label5.Location = new Point(33, 163);
             label5.Name = "label5";
-            label5.Size = new Size(75, 20);
+            label5.Size = new Size(59, 20);
             label5.TabIndex = 4;
-            label5.Text = "Trạng thái";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(33, 158);
-            label4.Name = "label4";
-            label4.Size = new Size(66, 20);
-            label4.TabIndex = 3;
-            label4.Text = "Mục tiêu";
+            label5.Text = "Tiến độ";
             // 
             // label3
             // 
@@ -468,6 +428,21 @@
             tabPage5.Text = "tabPage5";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // PBTask
+            // 
+            PBTask.Location = new Point(98, 163);
+            PBTask.Name = "PBTask";
+            PBTask.Size = new Size(466, 29);
+            PBTask.TabIndex = 15;
+            // 
+            // CBProjectToAddTask
+            // 
+            CBProjectToAddTask.FormattingEnabled = true;
+            CBProjectToAddTask.Location = new Point(155, 215);
+            CBProjectToAddTask.Name = "CBProjectToAddTask";
+            CBProjectToAddTask.Size = new Size(409, 38);
+            CBProjectToAddTask.TabIndex = 16;
+            // 
             // TaskForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -494,17 +469,13 @@
         private TabControl tabControl1;
         public TabPage tabPage1;
         private Button buttonDeleteProjectAdd;
-        private Button btnSaveProject;
+        private Button btnSaveTask;
         private GroupBox groupBox1;
-        private DateTimePicker dateTimePickerEndDate;
-        private DateTimePicker dateTimePickerStartDate;
-        private ComboBox comboBoxStatus;
-        private TextBox txtTarget;
-        private TextBox txtDescription;
+        private DateTimePicker dateTimePickerEndDateTask;
+        private DateTimePicker dateTimePickerStartDateTask;
         private Label label7;
-        private TextBox txtProjectName;
+        private TextBox txtTaskName;
         private Label label5;
-        private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
@@ -529,5 +500,7 @@
         private ListBox listBox1;
         private TextBox textBox5;
         private TabPage tabPage5;
+        private ProgressBar PBTask;
+        private ComboBox CBProjectToAddTask;
     }
 }

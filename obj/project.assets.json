@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ACER\\Desktop\\Programs\\LTHDT\\DoAnCuoiKi\\DoAnCuoiKi.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\Desktop\\Programs\\LTHDT\\AppQuanLyDuAnNhom\\DoAnCuoiKi.csproj",
       "projectName": "DoAnCuoiKi",
-      "projectPath": "C:\\Users\\ACER\\Desktop\\Programs\\LTHDT\\DoAnCuoiKi\\DoAnCuoiKi.csproj",
+      "projectPath": "C:\\Users\\ACER\\Desktop\\Programs\\LTHDT\\AppQuanLyDuAnNhom\\DoAnCuoiKi.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\Desktop\\Programs\\LTHDT\\DoAnCuoiKi\\obj\\",
+      "outputPath": "C:\\Users\\ACER\\Desktop\\Programs\\LTHDT\\AppQuanLyDuAnNhom\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

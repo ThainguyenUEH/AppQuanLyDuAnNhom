@@ -21,6 +21,7 @@ namespace DoAnCuoiKi
         private ProjectListBoxManager ProjectListBoxManager;
         private TaskListBoxManager taskListBoxManager;
         private ButtonDeleteProjectAdd deleteProjectAddButton;
+        private ProjectInfoDisplayManager projectInfoDisplayManager;
         public ProjectForm()
         {
             InitializeComponent();
@@ -31,8 +32,20 @@ namespace DoAnCuoiKi
             ProjectListBoxManager.LoadProjectsToListBox();
             taskListBoxManager = new TaskListBoxManager(LBTaskInProject, taskManager, LBProjectList);
             deleteProjectAddButton = new ButtonDeleteProjectAdd(txtProjectName, dateTimePickerStartDate, dateTimePickerEndDate, txtTarget, comboBoxStatus, txtDescription);
+            projectInfoDisplayManager = new ProjectInfoDisplayManager(TBProjectInfor, LBProjectList2, projectManager);
         }
 
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabTaskInProjectInfo)
+            {
+                projectInfoDisplayManager.DisplayProjectName();
+            }
+            else if (tabControl1.SelectedTab == tabProjectList)
+            {
+                ProjectListBoxManager.LoadProjectsToListBox();
+            }
+        }
         public void btnSaveProject_Click(object sender, EventArgs e)
         {
             string name = txtProjectName.Text;
@@ -98,6 +111,10 @@ namespace DoAnCuoiKi
             taskManager.LBTaskInProject_SelectedIndexChanged(sender, e);
         }
 
+        private void LBProjectList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            projectInfoDisplayManager.DisplayProjectInfo();
+        }
 
         public class ListBoxItem<T>
         {
